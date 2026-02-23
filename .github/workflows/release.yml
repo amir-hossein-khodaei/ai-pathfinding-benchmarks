@@ -1,0 +1,40 @@
+﻿name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build JAR
+        run: |
+          mkdir -p bin
+          find src -name "*.java" > sources.txt
+          javac -d bin @sources.txt
+          # Create JAR with Main-Class manifest
+          jar cfe PathfindingBenchmarks.jar Main -C bin .
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: PathfindingBenchmarks.jar
+          generate_release_notes: true
+          draft: false
+          prerelease: false
