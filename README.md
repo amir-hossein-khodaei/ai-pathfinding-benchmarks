@@ -8,7 +8,7 @@
 <div align="center">
 
 <!-- HERO SECTION: Capsule Render Banner -->
-![Pathfinding Benchmarks Header](https://capsule-render.vercel.app/api?type=waving&color=0:8b5cf6,100:3b82f6&height=220&section=header&text=Pathfinding%20Benchmarks&fontSize=60&fontColor=ffffff&desc=High-Performance%20Algorithm%20Lab%20%26%20AI%20Heuristics&descSize=25&animation=fadeIn)
+![Pathfinding Benchmarks Header](https://capsule-render.vercel.app/api?type=waving&color=0:8b5cf6,100:3b82f6&height=220&section=header&text=Pathfinding%20Benchmarks&fontSize=60&fontColor=ffffff&esc=AI%20Constraint%20Satisfaction%20Problem%20Solver&descAlignY=60&descSize=25&animation=fadeIn)
 
 <!-- TYPING SVG: Dynamic Value Propositions -->
 <a href="https://github.com/Amkhodaei83/pathfinding-benchmarks">
@@ -33,16 +33,12 @@
 <!-- ACTION BUTTONS -->
 <p>
   <a href="https://amkhodaei83.github.io/pathfinding-benchmarks/final_output/">
-    <img src="https://img.shields.io/badge/🚀_View_Live_Demo-000000?style=flat-square&logo=google-chrome&logoColor=white" alt="View Live Demo" height="35">
+    <img src="https://img.shields.io/badge/View_Live_Demo-000000?style=flat-square&logo=google-chrome&logoColor=white" alt="View Live Demo" height="35">
   </a>
   &nbsp;
   <a href="#-getting-started">
-    <img src="https://img.shields.io/badge/💻_Run_Locally-000000?style=flat-square&logo=git&logoColor=white" alt="Run Locally" height="35">
-  </a>
-  &nbsp;
-  <a href="https://github.com/Amkhodaei83/pathfinding-benchmarks/issues">
-    <img src="https://img.shields.io/badge/🐛_Report_Bug-000000?style=flat-square&logo=github&logoColor=white" alt="Report Bug" height="35">
-  </a>
+      <img src="https://img.shields.io/badge/SETUP_LOCALLY-222222?style=flat-square&logo=github&logoColor=white" alt="Setup Local Development Environment" height="35" />
+    </a>
 </p>
 
 </div>
@@ -136,19 +132,20 @@ We treat algorithm performance data like financial analytics. The project includ
 The following diagram illustrates the **Hybrid AI Pipeline**—how Java generation feeds Python training, which loops back into the Java runtime.
 
 ```mermaid
-graph TD
-    subgraph "Phase 1: Data Generation (Java)"
-        A[Map Generator] -->|Creates 1000+ Maps| B(Solved Maps)
+graph LR
+
+    subgraph P1["Phase 1: Data Generation (Java)"]
+        A[Map Generator] -->|1000+ Maps| B(Solved Maps)
         B -->|Extract Features| C[training_data.jsonl]
     end
 
-    subgraph "Phase 2: Model Training (Python)"
+    subgraph P2["Phase 2: Model Training (Python)"]
         C --> D[ML.py]
-        D -->|Train Regression/MLP| E{Best Model?}
+        D -->|Train Model| E{Best Model?}
         E -->|Export Weights| F[ml_weights.properties]
     end
 
-    subgraph "Phase 3: Runtime Injection (Java)"
+    subgraph P3["Phase 3: Runtime Injection (Java)"]
         F -->|Load at Startup| G[MachineLearnedHeuristic.java]
         G -->|Predict Cost| H[A* / SMA* Engine]
         H -->|Output Logs| I[benchmark_results.csv]
@@ -362,3 +359,7 @@ Project Link: [https://github.com/Amkhodaei83/pathfinding-benchmarks](https://gi
 
 
 
+<br />
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8b5cf6,100:3b82f6&height=100&section=footer" width="100%" alt="Footer Wave">
+</div>
