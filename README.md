@@ -174,7 +174,7 @@ Follow these steps to set up the environment for both the Java Benchmark Engine 
 1.  **Clone the Repository**
     ```bash
     git clone https://github.com/amir-hossein-khodaei/ai-pathfinding-benchmarks.git
-    cd pathfinding-benchmarks
+    cd ai-pathfinding-benchmarks
     ```
 
 2.  **Compile the Java Engine**
